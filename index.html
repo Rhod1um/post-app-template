@@ -31,26 +31,58 @@
     Den har js funktioner på sig automatisk. Men man skal have en queryselector showModel() på for at den vises-->
         <h2>Create new post</h2>
         <form id="form-create-post" method="dialog">
-            <label for="title"></label> <!-- for="": hvem høre den label til? id på input-->
+            <label for="title">Title</label> <!-- for="": hvem høre den label til? id på input-->
             <input id="title" type="text" name="title" placeholder="New title">
-            <label for="body"></label>
+            <label for="body">Content</label>
             <input id="body" type="text" name="body" placeholder="New body content">
-            <label for="image"></label>
+            <label for="image">Image url</label>
             <input id="image" type="url" name="image" placeholder="Image url">
             <button id="button-cancel" type="button">Cancel</button>
             <!--skal have type på ellers submitter den formen. Er der type på submitter den ikke,
             så kan den gøre noget andet, som her at lukke modalen
-            type på den der submitter er submit og det er default så man behøver ikke skrive det-->
+            type på den der submitter er submit og det er default så man behøver ikke skrive det
+            name i forms er det man refere til i js når man henter attributter fx form.title.value
+            man kan også bruge queryselector til at få attributerne men det er dobbelt arbejde
+            når vi allerede har eventet/indsendte objekt i event.target-->
             <button>Create</button>
         </form>
     </dialog>
 
     <!-- dialog - update post -->
     <!-- to do  -->
+    <dialog id="dialog-update-post"> <!--nyt html tag, får det til at gå ud af skærmen og slørre baggrunden.
+    Den har js funktioner på sig automatisk. Men man skal have en queryselector showModel() på for at den vises-->
+        <h2>Update post</h2>
+        <form id="form-update-post" method="dialog">
+            <label for="title">Title</label> <!-- for="": hvem høre den label til? id på input-->
+            <input id="title-update" type="text" name="title" placeholder="New title">
+            <label for="body">Content</label>
+            <input id="body-update" type="text" name="body" placeholder="New body content">
+            <label for="image">Image url</label>
+            <input id="image-update" type="url" name="image" placeholder="Image url">
+            <button id="button-cancel-update" type="button">Cancel</button>
+            <!--skal have type på ellers submitter den formen. Er der type på submitter den ikke,
+            så kan den gøre noget andet, som her at lukke modalen
+            type på den der submitter er submit og det er default så man behøver ikke skrive det
+            name i forms er det man refere til i js når man henter attributter fx form.title.value
+            man kan også bruge queryselector til at få attributerne men det er dobbelt arbejde
+            når vi allerede har eventet/indsendte objekt i event.target-->
+            <button>Create</button>
+        </form>
+    </dialog>
 
 
     <!-- dialog - delete post -->
     <!-- to do  -->
+    <dialog id="dialog-delete-post"> <!--open gør at den åbner med det samme-->
+        <h2>Do you want to delete the post?</h2>
+        <p id="dialog-delete-post-title">Post title placeholder</p>
+        <form id="form-delete-post" method="dialog" data-id="">
+            <button>Yes</button> <!--default, er submit knap - action udføres-->
+            <button type="button" id="btn-no">No</button> <!--skal have type da det ikke er submit-->
+        </form>
+        <!--god skik at pakke knapper ind i en form fordi det er en dialog-->
+    </dialog>
 
     <script src="app.js"></script>
 </body>
