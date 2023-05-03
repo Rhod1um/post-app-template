@@ -27,6 +27,23 @@
 
     <!-- dialog - create new post -->
     <!-- to do  -->
+    <dialog id="dialog-create-post"> <!--nyt html tag, får det til at gå ud af skærmen og slørre baggrunden.
+    Den har js funktioner på sig automatisk. Men man skal have en queryselector showModel() på for at den vises-->
+        <h2>Create new post</h2>
+        <form id="form-create-post" method="dialog">
+            <label for="title"></label> <!-- for="": hvem høre den label til? id på input-->
+            <input id="title" type="text" name="title" placeholder="New title">
+            <label for="body"></label>
+            <input id="body" type="text" name="body" placeholder="New body content">
+            <label for="image"></label>
+            <input id="image" type="url" name="image" placeholder="Image url">
+            <button id="button-cancel" type="button">Cancel</button>
+            <!--skal have type på ellers submitter den formen. Er der type på submitter den ikke,
+            så kan den gøre noget andet, som her at lukke modalen
+            type på den der submitter er submit og det er default så man behøver ikke skrive det-->
+            <button>Create</button>
+        </form>
+    </dialog>
 
     <!-- dialog - update post -->
     <!-- to do  -->
